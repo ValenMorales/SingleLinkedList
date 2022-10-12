@@ -131,7 +131,7 @@ class SingleLinkedList:
                 previous_node.next = remove_node.next
                 remove_node.next = None
 
-                
+
     def insert_node(self, index, value):
         if index < 1 or index > self.length+1:
             print('posicion erronea')
@@ -148,6 +148,15 @@ class SingleLinkedList:
             self.length +=1
 
 
+    def reverse(self):
+        current_node = self.head
+        previous_node = None
+        while current_node != None:
+            next_node= current_node.next
+            current_node.next= previous_node
+            previous_node= current_node
+            current_node= next_node
+        self.head= previous_node
 
 
          
